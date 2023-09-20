@@ -18,7 +18,7 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # 默认ip 192.168.4.1
-sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.4.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
 # 修改时区 UTF-8
 sed -i 's/UTC/CST-8/g'  package/base-files/files/bin/config_generate
