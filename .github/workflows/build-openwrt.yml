@@ -16,8 +16,8 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: false
-        default: 'ture'
+        required: true
+        default: 'true'
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x
