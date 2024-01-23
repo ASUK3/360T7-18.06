@@ -29,7 +29,7 @@ sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/con
 sed -i 's/UTC/CST-8/g'  package/base-files/files/bin/config_generate
 
 # 修改主机名 OP
-sed -i 's/ImmortalWrt/Simple love/g'  package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/Simple/g'  package/base-files/files/bin/config_generate
 
 # 时区
 sed -i 's/time1.apple.com/time1.cloud.tencent.com/g'  package/base-files/files/bin/config_generate
