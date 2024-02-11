@@ -20,7 +20,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argonv3/' feeds/luci/collections/luci/
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #定时任务软件源
-git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
+#git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 
 # 默认ip 192.168.6.1
 sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/config_generate
