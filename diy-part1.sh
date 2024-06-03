@@ -40,9 +40,8 @@ sed -i 's/pool.ntp.org/cn.pool.ntp.org/g'  package/base-files/files/bin/config_g
 #tcp优化
 echo 'net.ipv4.icmp_echo_ignore_broadcasts = 1' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.icmp_echo_ignore_all = 1' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.somaxconn = 8192' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.netdev_max_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_max_syn_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.netdev_max_backlog = 424242' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_max_syn_backlog = 1024' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_icmp_timeout=10' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_syn_recv=5' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_syn_sent=5' >>package/base-files/files/etc/sysctl.conf
