@@ -29,7 +29,7 @@ sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/con
 sed -i 's/UTC/CST-8/g'  package/base-files/files/bin/config_generate
 
 # 修改主机名 OP
-sed -i 's/ImmortalWrt/ASUS/g'  package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/ASUSWRT/g'  package/base-files/files/bin/config_generate
 
 # 时区
 sed -i 's/time1.apple.com/time1.cloud.tencent.com/g'  package/base-files/files/bin/config_generate
@@ -38,7 +38,19 @@ sed -i 's/time.cloudflare.com/cn.ntp.org.cn/g'  package/base-files/files/bin/con
 sed -i 's/pool.ntp.org/cn.pool.ntp.org/g'  package/base-files/files/bin/config_generate
 
 #tcp优化
-echo 'net.ipv4.icmp_echo_ignore_broadcasts = 1' >>/etc/sysctl.conf
+echo 'net.ipv4.icmp_echo_ignore_broadcasts = 1' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.icmp_echo_ignore_all = 1' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.somaxconn = 8192' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.netdev_max_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_max_syn_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_icmp_timeout=10' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_syn_recv=5' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_syn_sent=5' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_established=600' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_fin_wait=10' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_time_wait=10' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_close_wait=10' >>package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_tcp_timeout_last_ack=10' >>package/base-files/files/etc/sysctl.conf
 
 # 替换源 
 sed -i 's,mirrors.vsean.net/openwrt,mirrors.pku.edu.cn/immortalwrt,g'  package/emortal/default-settings/files/99-default-settings-chinese
