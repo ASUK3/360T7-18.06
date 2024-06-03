@@ -37,6 +37,9 @@ sed -i 's/time1.google.com/ntp.aliyun.com/g'  package/base-files/files/bin/confi
 sed -i 's/time.cloudflare.com/cn.ntp.org.cn/g'  package/base-files/files/bin/config_generate
 sed -i 's/pool.ntp.org/cn.pool.ntp.org/g'  package/base-files/files/bin/config_generate
 
+#tcp优化
+echo 'net.ipv4.icmp_echo_ignore_broadcasts = 1' >>/etc/sysctl.conf
+
 # 替换源 
 sed -i 's,mirrors.vsean.net/openwrt,mirrors.pku.edu.cn/immortalwrt,g'  package/emortal/default-settings/files/99-default-settings-chinese
 
