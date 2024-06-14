@@ -14,16 +14,13 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # name: 替换默认主题 luci-theme-argon
-#sed -i 's/luci-theme-bootstrap/Luci-theme-design/' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argonv3/' feeds/luci/collections/luci/Makefile
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 #定时任务软件源
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-
-#主题Design软件源
-git clone https://github.com/gngpp/luci-theme-design.git  package/luci-theme-design
 
 # 默认ip 192.168.6.1
 sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/config_generate
@@ -32,7 +29,7 @@ sed -i 's/192.168.[0-9]\{1,3\}.1/192.168.6.1/g' package/base-files/files/bin/con
 sed -i 's/UTC/CST-8/g'  package/base-files/files/bin/config_generate
 
 # 修改主机名 OP
-sed -i 's/ImmortalWrt/ASUSWRT/g'  package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/ASUSZRAM/g'  package/base-files/files/bin/config_generate
 
 # 时区
 sed -i 's/time1.apple.com/time1.cloud.tencent.com/g'  package/base-files/files/bin/config_generate
