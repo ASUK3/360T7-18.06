@@ -50,8 +50,6 @@ echo 'net.netfilter.nf_conntrack_tcp_timeout_fin_wait = 10' >>package/base-files
 echo 'net.netfilter.nf_conntrack_tcp_timeout_time_wait = 10' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_close_wait = 10' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_last_ack = 10' >>package/base-files/files/etc/sysctl.conf
-echo 'vm.swappiness = 0' >>package/base-files/files/etc/sysctl.conf
-echo 'vm.overcommit_memory = 1' >>package/base-files/files/etc/sysctl.conf
 
 # 替换源 
 sed -i 's,mirrors.vsean.net/openwrt,mirrors.pku.edu.cn/immortalwrt,g'  package/emortal/default-settings/files/99-default-settings-chinese
