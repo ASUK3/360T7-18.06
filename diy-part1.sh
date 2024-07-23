@@ -84,7 +84,8 @@ echo 'net.ipv4.ipfrag_time = 30' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.ipfrag_max_dist = 64' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.ipfrag_secret_interval = 600' >>package/base-files/files/etc/sysctl.conf
 echo 'kernel.printk = 0 0 0 0' >>package/base-files/files/etc/sysctl.conf
-
+echo 'net.core.default_qdisc=fq' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_congestion_control=bbr2' >>package/base-files/files/etc/sysctl.conf
 
 # 替换源 
 sed -i 's,mirrors.vsean.net/openwrt,mirrors.pku.edu.cn/immortalwrt,g'  package/emortal/default-settings/files/99-default-settings-chinese
