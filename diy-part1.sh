@@ -42,6 +42,27 @@ echo 'fs.file-max = 2097152' >>package/base-files/files/etc/sysctl.conf
 echo 'fs.nr_open = 2097152' >>package/base-files/files/etc/sysctl.conf
 echo '' >>package/base-files/files/etc/sysctl.conf
 echo 'net.core.netdev_max_backlog = 5000' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.somaxconn = 8192' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.rmem_max = 16777216' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.wmem_max = 16777216' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.rmem_default = 16777216' >>package/base-files/files/etc/sysctl.conf
+echo 'net.core.wmem_default = 16777216' >>package/base-files/files/etc/sysctl.conf
+echo '' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.ip_forward = 1' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_slow_start_after_idle = 0' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_syn_retries = 2' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_synack_retries = 2' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_max_syn_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_timestamps = 0' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_low_latency = 1' >>package/base-files/files/etc/sysctl.conf
+echo '' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_rmem = 4096 87380 8388608' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_wmem = 4096 65536 8388608' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.udp_rmem_min = 8192' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.udp_wmem_min = 8192' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.tcp_mem = 393216 1048576 1572864' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.udp_mem = 32768 65536 131072' >>package/base-files/files/etc/sysctl.conf
+echo '' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_max = 65536' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_established = 300' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_tcp_timeout_syn_recv = 20' >>package/base-files/files/etc/sysctl.conf
@@ -54,39 +75,8 @@ echo 'net.netfilter.nf_conntrack_udp_timeout_stream = 60' >>package/base-files/f
 echo 'net.netfilter.nf_conntrack_frag6_high_thresh = 262144' >>package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_frag6_low_thresh = 196608' >>package/base-files/files/etc/sysctl.conf
 echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.ip_forward = 1' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_slow_start_after_idle = 0' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_syn_retries = 2' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_synack_retries = 2' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_max_syn_backlog = 4096' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_timestamps = 0' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_low_latency = 1' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_rmem = 4096 87380 8388608' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_wmem = 4096 65536 8388608' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.route.flush = 1' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.ip_local_port_range = 1024 65535' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.tcp_mem = 393216 1048576 1572864' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.conf.all.rp_filter = 0' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.conf.default.rp_filter = 0' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.neigh.default.gc_stale_time = 60' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.neigh.default.gc_thresh1 = 1024' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.neigh.default.gc_thresh2 = 2048' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.neigh.default.gc_thresh3 = 4096' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.somaxconn = 8192' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.rmem_max = 16777216' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.wmem_max = 16777216' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.rmem_default = 16777216' >>package/base-files/files/etc/sysctl.conf
-echo 'net.core.wmem_default = 16777216' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.udp_rmem_min = 8192' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.udp_wmem_min = 8192' >>package/base-files/files/etc/sysctl.conf
-echo 'net.ipv4.udp_mem = 32768 65536 131072' >>package/base-files/files/etc/sysctl.conf
-echo '' >>package/base-files/files/etc/sysctl.conf
+echo 'net.ipv4.route.flush = 1' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.ip_no_pmtu_disc = 0' >>package/base-files/files/etc/sysctl.conf
 echo '' >>package/base-files/files/etc/sysctl.conf
 echo 'net.ipv4.ipfrag_high_thresh = 2097152' >>package/base-files/files/etc/sysctl.conf
